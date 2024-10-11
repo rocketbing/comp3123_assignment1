@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "ac2857f5-019c-4eee-b94f-46b8b3c852fc",
+		"name": "a1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38927234"
+	},
+	"item": [
+		{
+			"name": "/api/v1/user/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"james\",\r\n    \"email\": \"james@example.com\",\r\n    \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/user/signup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/user/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \r\n    \"username\": \"james\",\r\n    \"password\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/user/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/emp/employees",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "gfg_token_header_key",
+						"value": "{{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/emp/employees",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emp",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/emp/employees",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "gfg_token_header_key",
+						"value": "{{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"first_name\": \"James\",\r\n\t\"last_name\": \"Li\",\r\n\t\"email\": \"james.li@example.com\",\r\n\t\"position\": \"Worker\",\r\n\t\"salary\": 500,\r\n\t\"date_of_joining\": \"2023-08-10T00:00:00.000Z\",\r\n\t\"department\": \"Manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/emp/employees",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emp",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/emp/employees/{eid}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "gfg_token_header_key",
+						"value": "{{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/emp/employees/67085b2d80d267d6b6f26b0f",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emp",
+						"employees",
+						"67085b2d80d267d6b6f26b0f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/emp/employees/{eid} ",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "gfg_token_header_key",
+						"value": "{{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"position\": \"Senior Designer\",\r\n\t\"salary\": 1950000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/emp/employees/67085b2d80d267d6b6f26b0f",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emp",
+						"employees",
+						"67085b2d80d267d6b6f26b0f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/emp/employees?eid=xxx ",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "gfg_token_header_key",
+						"value": "{{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/emp/employees?eid=67085b2d80d267d6b6f26b0a",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"emp",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "eid",
+							"value": "67085b2d80d267d6b6f26b0a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "jwt_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiMjAyNC0xMC0xMFQxOToxMTo0MS40MTZaIiwidXNlcl9pZCI6IjY3MDdmZjU0NThiN2RlODQwNTBiM2JmMiIsImlhdCI6MTcyODU4NzUwMX0.76myR-4wc-R4XboBk_wKMKXIK-GvrifUKgNfzJXc35g",
+			"type": "string"
+		}
+	]
+}
